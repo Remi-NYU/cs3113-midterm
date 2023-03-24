@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 [System.Serializable]
 public class InventorySlot
@@ -90,7 +91,7 @@ public class BuildManager : MonoBehaviour
         previewSprite.color = (numOverlaps > 0) ? new Color(255, 0, 0, 0.5f) : new Color(255, 255, 255, 0.5f);
 
         // Place item
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             if (numOverlaps == 0 && inventory[selectedSlot].amount > 0)
             {
