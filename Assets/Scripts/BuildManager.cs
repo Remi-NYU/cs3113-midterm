@@ -56,7 +56,7 @@ public class BuildManager : MonoBehaviour
     void Update()
     {
         // Toggle between build mode and normal mode
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             SetBuildMode(!buildmodeOn);
         }
