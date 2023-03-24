@@ -37,11 +37,16 @@ public class BuildManager : MonoBehaviour
 
         for (int i = 0; i < inventory.Count; i++)
         {
-            // Set number in slot to actual number at startup
-            inventory[i].amountText.text = inventory[i].amount.ToString();
             // Find other external references based on the main one for ease of use in the editor
             inventory[i].itemSprite = inventory[i].slotImage.transform.GetChild(0).GetComponent<Image>();
             inventory[i].amountText = inventory[i].slotImage.transform.GetChild(1).GetComponent<TMP_Text>();
+
+            // Set number in slot to actual number at startup
+            inventory[i].amountText.text = inventory[i].amount.ToString();
+
+            // Set image in UI based on prefab
+            inventory[i].itemSprite.sprite = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().sprite;
+            inventory[i].itemSprite.color = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().color;
         }
     }
 
