@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class InventorySlot
 {
     public GameObject itemPrefab;
-    public Image slotImage;
+    [HideInInspector] public Image slotImage;
     [HideInInspector] public Image itemSprite;
     [HideInInspector] public TMP_Text amountText;
     public int amount;
@@ -18,27 +18,28 @@ public class InventorySlot
 public class BuildManager : MonoBehaviour
 {
     // Externals
-    [SerializeField] float buildmodeTimeScale = 0.1f;
-    [SerializeField] SpriteRenderer previewSprite;
-    [SerializeField] Canvas inventoryUI;
-    [SerializeField] List<InventorySlot> inventory;
+    [SerializeField] float buildmodeTimeScale = 0.1f;   // time factor used when in buildmode
+    [SerializeField] GameObject previewPrefab;          // prefab that is spawned to used to show build preview
+    SpriteRenderer previewSprite;
+    Canvas buildmodeCanvas;
     AudioSource audioSource;
 
     // State
+    [SerializeField] List<InventorySlot> inventory;     // items given to the player and their quantities
     int selectedSlot = 0;
     bool buildmodeOn = false;
 
     // Logic
     void Start()
     {
+        // Get externals
+        previewSprite = Instantiate(previewPrefab, Vector3.zero, Quaternion.identity).GetComponent<SpriteRenderer>();
         audioSource = GetComponent<AudioSource>();
-
-        SelectItem(0);
-        SetBuildMode(false);
-
+        buildmodeCanvas = GetComponent<Canvas>();
         for (int i = 0; i < inventory.Count; i++)
         {
             // Find other external references based on the main one for ease of use in the editor
+            inventory[i].slotImage = transform.GetChild(i).GetComponent<Image>();
             inventory[i].itemSprite = inventory[i].slotImage.transform.GetChild(0).GetComponent<Image>();
             inventory[i].amountText = inventory[i].slotImage.transform.GetChild(1).GetComponent<TMP_Text>();
 
@@ -49,12 +50,18 @@ public class BuildManager : MonoBehaviour
             inventory[i].itemSprite.sprite = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().sprite;
             inventory[i].itemSprite.color = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().color;
         }
+
+        //
+
+        // Set initial state
+        SelectItem(0);
+        SetBuildMode(false);
     }
 
     void SetBuildMode(bool newBuildmode)
     {
         buildmodeOn = newBuildmode;
-        inventoryUI.enabled = buildmodeOn;
+        buildmodeCanvas.enabled = buildmodeOn;
         previewSprite.enabled = buildmodeOn;
         Time.timeScale = buildmodeOn ? buildmodeTimeScale : 1f;
     }
