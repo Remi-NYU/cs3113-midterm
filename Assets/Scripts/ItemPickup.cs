@@ -16,8 +16,19 @@ public class ItemPickup : MonoBehaviour
         itemSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
         buildManager = GameObject.FindGameObjectWithTag("BuildModeUI").GetComponent<BuildManager>();
 
-        itemSprite.sprite = itemSpriteSourcePrefab.GetComponent<SpriteRenderer>().sprite;
-        itemSprite.color = itemSpriteSourcePrefab.GetComponent<SpriteRenderer>().color;
+        ItemSprite itemSpriteComponent = itemSpriteSourcePrefab.GetComponent<ItemSprite>();
+        if (itemSpriteComponent != null)
+        {
+            // If the item has a custom sprite, use that
+            itemSprite.sprite = itemSpriteComponent.itemSprite;
+            itemSprite.color = Color.white;
+        }
+        else
+        {
+            // Otherwise use the same sprite it's using in the world
+            itemSprite.sprite = itemSpriteSourcePrefab.GetComponent<SpriteRenderer>().sprite;
+            itemSprite.color = itemSpriteSourcePrefab.GetComponent<SpriteRenderer>().color;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

@@ -48,11 +48,20 @@ public class BuildManager : MonoBehaviour
             inventory[i].amountText.text = inventory[i].amount.ToString();
 
             // Set image in UI based on prefab
-            inventory[i].itemSprite.sprite = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().sprite;
-            inventory[i].itemSprite.color = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().color;
+            ItemSprite itemSpriteComponent = inventory[i].itemPrefab.GetComponent<ItemSprite>();
+            if (itemSpriteComponent != null)
+            {
+                // If the item has a custom sprite, use that
+                inventory[i].itemSprite.sprite = itemSpriteComponent.itemSprite;
+                inventory[i].itemSprite.color = Color.white;
+            }
+            else
+            {
+                // Otherwise use the same sprite it's using in the world
+                inventory[i].itemSprite.sprite = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().sprite;
+                inventory[i].itemSprite.color = inventory[i].itemPrefab.GetComponent<SpriteRenderer>().color;
+            }
         }
-
-        //
 
         // Set initial state
         SelectItem(0);

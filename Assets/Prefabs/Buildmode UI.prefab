@@ -1746,7 +1746,7 @@ GameObject:
   - component: {fileID: 8741560812061132117}
   m_Layer: 5
   m_Name: Buildmode UI
-  m_TagString: Untagged
+  m_TagString: BuildModeUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1796,26 +1796,31 @@ MonoBehaviour:
     itemSprite: {fileID: 0}
     amountText: {fileID: 0}
     amount: 2
+    itemName: Moving Platform
   - itemPrefab: {fileID: 5476496399725114951, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
     slotImage: {fileID: 0}
     itemSprite: {fileID: 0}
     amountText: {fileID: 0}
     amount: 1
+    itemName: Static Platform
   - itemPrefab: {fileID: 4180539652710676842, guid: 4ff3a1f8c74c44f4abf34adbd80ff772, type: 3}
     slotImage: {fileID: 0}
     itemSprite: {fileID: 0}
     amountText: {fileID: 0}
     amount: 1
+    itemName: Bouncy Platfrom
   - itemPrefab: {fileID: 5476496399725114951, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
     slotImage: {fileID: 0}
     itemSprite: {fileID: 0}
     amountText: {fileID: 0}
     amount: 0
+    itemName: Nothing
   - itemPrefab: {fileID: 5476496399725114951, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
     slotImage: {fileID: 0}
     itemSprite: {fileID: 0}
     amountText: {fileID: 0}
     amount: 0
+    itemName: Nothing
 --- !u!223 &923852584750254893
 Canvas:
   m_ObjectHideFlags: 0
