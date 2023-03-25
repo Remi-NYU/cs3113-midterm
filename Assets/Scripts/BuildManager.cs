@@ -13,6 +13,7 @@ public class InventorySlot
     [HideInInspector] public Image itemSprite;
     [HideInInspector] public TMP_Text amountText;
     public int amount;
+    public string itemName;
 }
 
 public class BuildManager : MonoBehaviour
@@ -130,5 +131,16 @@ public class BuildManager : MonoBehaviour
     {
         inventory[slot].amount = newAmount;
         inventory[slot].amountText.text = newAmount.ToString();
+    }
+
+    public void IncreaseItemAmount(string name) // returns false if no such item exists
+    {
+        int idx = inventory.FindIndex(s => s.itemName == name);
+        if (idx == -1)
+        {
+            print("Item name could not be found in inventory. Are you sure you wrote it correctly?");
+            return;
+        }
+        SetSlotAmount(idx, inventory[idx].amount + 1);
     }
 }
