@@ -56,6 +56,7 @@ public class StateManager : MonoBehaviour
         {
             if (!stateToUI[i].ui.initDone)
             {
+                stateToUI[i].ui.gameObject.SetActive(true);
                 return false;
             }
             else
@@ -71,7 +72,7 @@ public class StateManager : MonoBehaviour
         return true;
     }
 
-    GenericUI GetUI(GameState state)
+    public GenericUI GetUI(GameState state)
     {
         for (int i = 0; i < stateToUI.Length; i++)
         {

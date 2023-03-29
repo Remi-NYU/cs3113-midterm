@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class VictoryUI : GenericUI
 {
-    // Start is called before the first frame update
+    Canvas uiCanvas;
+
     void Start()
     {
-
+        uiCanvas = GetComponent<Canvas>();
+        initDone = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Show()
     {
+        uiCanvas.enabled = true;
+    }
 
+    public override void Hide()
+    {
+        uiCanvas.enabled = false;
     }
 }

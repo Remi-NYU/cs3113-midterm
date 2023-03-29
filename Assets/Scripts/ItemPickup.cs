@@ -14,7 +14,8 @@ public class ItemPickup : MonoBehaviour
     void Start()
     {
         itemSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        buildUI = GameObject.FindGameObjectWithTag("BuildModeUI").GetComponent<BuildUI>();
+        StateManager stateManager = GameObject.FindGameObjectWithTag("StateManager").GetComponent<StateManager>();
+        buildUI = (BuildUI)stateManager.GetUI(GameState.Building);
 
         ItemSprite itemSpriteComponent = itemSpriteSourcePrefab.GetComponent<ItemSprite>();
         if (itemSpriteComponent != null)
