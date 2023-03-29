@@ -5,10 +5,11 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
 
-    public float groundspeed = 10;
+    public float groundspeed;
 
     public const float defaultAirSpeed = 5;
     public float defaultGravityScale = 1;
+    public float defaultGroundSpeed = 10;
     public float jumpForce = 350;
 
     public LayerMask theGround;
@@ -33,6 +34,7 @@ public class player : MonoBehaviour
         _abilities = GetComponent<abilities>();
 
         airspeed = defaultAirSpeed;
+        groundspeed = defaultGroundSpeed;
     }
 
     private bool isGliding = false;
