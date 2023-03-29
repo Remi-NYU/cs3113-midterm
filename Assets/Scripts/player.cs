@@ -44,7 +44,9 @@ public class player : MonoBehaviour
         if(grounded && state == 0)
         {
             xSpeed = Input.GetAxis("Horizontal") * groundspeed;
-            _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
+            if (xSpeed != 0) {
+                _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
+            }
         }
         else if (!grounded && state == 1)
         {
@@ -60,7 +62,9 @@ public class player : MonoBehaviour
             }
 
             xSpeed = Input.GetAxis("Horizontal") * airspeed;
-            _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
+            if (xSpeed != 0) {
+                _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
+            }
         }
         // end gliding when grounded (reset airspeed and gravity)
         else if (grounded && isGliding) 
