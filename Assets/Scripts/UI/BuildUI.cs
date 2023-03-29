@@ -16,7 +16,7 @@ public class InventorySlot
     public string itemName;
 }
 
-public class BuildManager : MonoBehaviour
+public class BuildUI : GenericUI
 {
     // Externals
     [SerializeField] float buildmodeTimeScale = 0.1f;   // time factor used when in buildmode
@@ -28,7 +28,6 @@ public class BuildManager : MonoBehaviour
     // State
     [SerializeField] List<InventorySlot> inventory;     // items given to the player and their quantities
     int selectedSlot = 0;
-    bool buildmodeOn = false;
 
     // Logic
     void Start()
@@ -65,27 +64,30 @@ public class BuildManager : MonoBehaviour
 
         // Set initial state
         SelectItem(0);
-        SetBuildMode(false);
+
+        initDone = true;
     }
 
-    void SetBuildMode(bool newBuildmode)
+    public override void Show()
     {
-        buildmodeOn = newBuildmode;
-        buildmodeCanvas.enabled = buildmodeOn;
-        previewSprite.enabled = buildmodeOn;
-        Time.timeScale = buildmodeOn ? buildmodeTimeScale : 1f;
+        base.Show();
+        buildmodeCanvas.enabled = true;
+        previewSprite.enabled = true;
+        Time.timeScale = buildmodeTimeScale;
+    }
+
+    public override void Hide()
+    {
+        base.Hide();
+        buildmodeCanvas.enabled = false;
+        previewSprite.enabled = false;
+        Time.timeScale = 1;
     }
 
     void Update()
     {
-        // Toggle between build mode and normal mode
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            SetBuildMode(!buildmodeOn);
-        }
-
         // Do no more if build mode is off
-        if (!buildmodeOn) return;
+        if (!uiEnabled) return;
 
         // Hotbar hotkeys
         List<KeyCode> hotbarKeys = new List<KeyCode> { KeyCode.Alpha1, KeyCode.Alpha2, KeyCode.Alpha3, KeyCode.Alpha4, KeyCode.Alpha5 };

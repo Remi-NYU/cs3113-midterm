@@ -8,13 +8,13 @@ public class ItemPickup : MonoBehaviour
     [SerializeField] string itemName;                       // the name of the item to increment
     [SerializeField] GameObject itemSpriteSourcePrefab;     // the prefab that will provide the sprite for the item
     SpriteRenderer itemSprite;
-    BuildManager buildManager;
+    BuildUI buildUI;
 
 
     void Start()
     {
         itemSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        buildManager = GameObject.FindGameObjectWithTag("BuildModeUI").GetComponent<BuildManager>();
+        buildUI = GameObject.FindGameObjectWithTag("BuildModeUI").GetComponent<BuildUI>();
 
         ItemSprite itemSpriteComponent = itemSpriteSourcePrefab.GetComponent<ItemSprite>();
         if (itemSpriteComponent != null)
@@ -35,7 +35,7 @@ public class ItemPickup : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            buildManager.IncreaseItemAmount(itemName);
+            buildUI.IncreaseItemAmount(itemName);
             Destroy(gameObject);
         }
     }
