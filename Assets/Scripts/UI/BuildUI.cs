@@ -81,7 +81,6 @@ public class BuildUI : GenericUI
         base.Hide();
         buildmodeCanvas.enabled = false;
         previewSprite.enabled = false;
-        Time.timeScale = 1;
     }
 
     void Update()

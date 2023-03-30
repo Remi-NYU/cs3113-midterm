@@ -91,4 +91,9 @@ public class StateManager : MonoBehaviour
         previousState = currentState;
         currentState = newState;
     }
+
+    public void Unpause()
+    {
+        SwitchState(previousState);
+    }
 }

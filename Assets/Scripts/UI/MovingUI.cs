@@ -14,6 +14,7 @@ public class MovingUI : GenericUI
 
     public override void Show()
     {
+        Time.timeScale = 1;
         uiCanvas.enabled = true;
     }
 

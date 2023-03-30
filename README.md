@@ -37,3 +37,7 @@ On the due date, the beginning of class will be devoted to group presentations. 
 have 8min to present their final game. Include, successes, setbacks, what you learned, and
 what you would add if you continued to work on it. Every group member must present. Include
 a short slide presentation and demo the game.
+
+# Credits
+
+- Pixel font: https://managore.itch.io/m6x11
