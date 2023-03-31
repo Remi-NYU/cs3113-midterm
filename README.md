@@ -41,3 +41,4 @@ a short slide presentation and demo the game.
 # Credits
 
 - Pixel font: https://managore.itch.io/m6x11
+- Main menu font: https://tinyworlds.itch.io/free-pixel-font-thaleah
