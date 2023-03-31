@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: StateManager Test
+  levelName: ShaurLevel1
   levelNumber: 4
   recordsUI: {fileID: 1411139161}
 --- !u!1 &105193399
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: StateManager Test
+  levelName: RemiLevel1
   levelNumber: 1
   recordsUI: {fileID: 1411139161}
 --- !u!1 &296619472
@@ -853,7 +853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: StateManager Test
+  levelName: RogerLevel1
   levelNumber: 3
   recordsUI: {fileID: 1411139161}
 --- !u!1 &900822721
@@ -1574,7 +1574,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: StateManager Test
+  levelName: RemiLevel2
   levelNumber: 2
   recordsUI: {fileID: 1411139161}
 --- !u!1 &1240691447
@@ -2241,7 +2241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Untitled Platforming Game
+  m_text: SHIFT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 00b9899c027c1784eb77ffda39d6707b, type: 2}
   m_sharedMaterial: {fileID: -4301074815849082799, guid: 00b9899c027c1784eb77ffda39d6707b, type: 2}
