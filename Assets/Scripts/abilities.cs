@@ -27,6 +27,7 @@ public class abilities : MonoBehaviour
         //      2. and gravity scale.
         player.setAirSpeed(glidingAirSpeed);
         player.setGravityScale(glidingGravityScale);
+        player.isGliding = true;
     }
 
     // called after a KeyUp event for left/right movement and in air or when player is grounded.
@@ -34,6 +35,7 @@ public class abilities : MonoBehaviour
     {
         player.resetAirSpeed();
         player.resetGravityScale();
+        player.isGliding = false;
     }
 
     public void handleFastFallStart()
@@ -42,12 +44,13 @@ public class abilities : MonoBehaviour
             Debug.Log("You cannot fast fall yet...");
             return;
         }
-
         player.setGravityScale(fastFallGravityScale);
+        player.isFastFalling = true;
     }
 
     public void handleFastFallEnd()
     {
         player.resetGravityScale();
+        player.isFastFalling = false;
     }
 }

@@ -5,28 +5,41 @@ using UnityEngine;
 public class player : MonoBehaviour
 {
 
-    public float groundspeed;
+    // global constant variables.
+    private const int MARBLE = 0;
+    private const int SPRING = 1;
+    private const int GLIDER = 2;
+    private const int HEAVY = 3;
 
+
+    // adjustable variables.
     public const float defaultAirSpeed = 5;
     public float defaultGravityScale = 1;
     public float defaultGroundSpeed = 10;
     public float jumpForce = 350;
+    public bool automaticallySwitchToPrevGroundState = true;
+    public bool useDownForFastFall = true;
 
     public LayerMask theGround;
     public Transform bottom;
-    bool grounded = false;
-    private float xSpeed;
-
-
-    private float airspeed = 5;
-
     Rigidbody2D _rigidbody;
     abilities _abilities;
-
     Animator _animator;
 
+
+
+    // non-adjustable variables.
     int state = 0;
-    // Start is called before the first frame update
+    public bool isGliding = false;
+    public bool isFastFalling = false;
+    private int prevGroundState = MARBLE;
+    public float groundspeed;
+    private float airspeed;
+    bool grounded = false;
+
+
+
+
     void Start()
     { 
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -37,80 +50,94 @@ public class player : MonoBehaviour
         groundspeed = defaultGroundSpeed;
     }
 
-    private bool isGliding = false;
-    private bool isFastFalling = false;
+
+
     void FixedUpdate() {
+        float hrInput = Input.GetAxis("Horizontal");
+        float vertInput = Input.GetAxis("Vertical");
 
-        if(grounded && state == 0)
-        {
-            xSpeed = Input.GetAxis("Horizontal") * groundspeed;
-            if (xSpeed != 0) {
-                _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
-            }
-        }
-        else if (!grounded && state == 1)
-        {
-            // if falling, handle possible gliding...
-            if (_rigidbody.velocity.y < 0f) {
-                if (Input.GetAxis("Horizontal") != 0f && !isGliding) {
-                    _abilities.handleGlideStart();
-                    isGliding = true;
-                } else if (Input.GetAxis("Horizontal") == 0f && isGliding) {
+        switch(state) {
+
+            case MARBLE:
+                if (!grounded) break;
+                if (hrInput == 0) break;
+                _rigidbody.velocity = new Vector2(hrInput * groundspeed, _rigidbody.velocity.y);
+                break;
+
+
+            case SPRING:
+                if (grounded && (vertInput > 0)) _rigidbody.AddForce(new Vector2(0, jumpForce));
+                if (!grounded && hrInput != 0) {
+                    _rigidbody.velocity = new Vector2(hrInput * airspeed, _rigidbody.velocity.y);
+                }
+                break;
+
+
+            case GLIDER:
+                if (grounded) {
                     _abilities.handleGlideEnd();
-                    isGliding = false;
-                } 
-            }
-
-            xSpeed = Input.GetAxis("Horizontal") * airspeed;
-            if (xSpeed != 0) {
-                _rigidbody.velocity = new Vector2(xSpeed, _rigidbody.velocity.y);
-            }
-        }
-        // end gliding when grounded (reset airspeed and gravity)
-        else if (grounded && isGliding) 
-        {
-            if (state == 1) { // if square, stop all x movement.
-                _rigidbody.velocity = new Vector2(0, _rigidbody.velocity.y);
-            }
-            _abilities.handleGlideEnd();
-            isGliding = false;
-        }
+                    if (automaticallySwitchToPrevGroundState) handleStateSwitch(prevGroundState);
+                    break;
+                } else { // airborne...
+                    if (_rigidbody.velocity.y <= 0f) {
+                        // all conditions are met! start gliding phase.
+                        _abilities.handleGlideStart();
+                    } else {    // player should not be able to glide when elevating.
+                        if (isGliding) _abilities.handleGlideEnd();
+                    }
+                }
+                if (hrInput != 0) _rigidbody.velocity = new Vector2(hrInput * airspeed, _rigidbody.velocity.y);
+                break;
 
 
-        // start fast fall when in air and pressing down key 
-        if (!grounded && Input.GetAxis("Vertical") < 0f) {
-            _abilities.handleFastFallStart();
-            isFastFalling = true;
-        }
-        // end fast fall when grounded.
-        if (isFastFalling && grounded) {
-            _abilities.handleFastFallEnd();
-            isFastFalling = false;
+            case HEAVY:
+                if (grounded) {
+                    _abilities.handleFastFallEnd();
+                    if (automaticallySwitchToPrevGroundState) {
+                        handleStateSwitch(prevGroundState);
+                        break;
+                    }
+                } else {
+                    _abilities.handleFastFallStart();
+                }
+                break;
+            
+
+            default:
+                break;
         }
     }
 
+
+
+    private void handleStateSwitch(int newState) {
+        if (state == newState) return;
+        if (state == MARBLE || state == SPRING) {
+            prevGroundState = state;
+        }
+        if (state == GLIDER) _abilities.handleGlideEnd();
+        if (state == HEAVY) _abilities.handleFastFallEnd();
+        _animator.SetInteger("State", newState);
+        state = newState;
+    }
+
+
     void Update()
     {
-
         grounded = Physics2D.OverlapCircle(bottom.position, 0.1f, theGround);
+        if (Input.GetKeyDown(KeyCode.Alpha1)) handleStateSwitch(MARBLE);
+        if (Input.GetKeyDown(KeyCode.Alpha2)) handleStateSwitch(SPRING);
+        if (Input.GetKeyDown(KeyCode.Alpha3)) handleStateSwitch(GLIDER);
+        if (Input.GetKeyDown(KeyCode.Alpha4)) handleStateSwitch(HEAVY);
 
-        if(Input.GetKeyDown(KeyCode.Space) && grounded && state == 1)
-        {
-            _rigidbody.AddForce(new Vector2(0, jumpForce));
-        }
-        if(Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            if(state == 0)
-            {
-                _animator.SetInteger("State", 1);
-                state = 1;
-            }
-            else if(state == 1)
-            {
-                _animator.SetInteger("State", 0);
-                state = 0;
-            }
-        }
+        // gamepad keys. Need to be tested before turning in!!!
+        if (Input.GetKeyDown(KeyCode.LeftArrow)) handleStateSwitch(MARBLE);
+        if (Input.GetKeyDown(KeyCode.UpArrow)) handleStateSwitch(SPRING);
+        if (Input.GetKeyDown(KeyCode.RightArrow)) handleStateSwitch(GLIDER);
+        if (Input.GetKeyDown(KeyCode.DownArrow)) handleStateSwitch(HEAVY);
+
+        // if the option is toggled, support down key (S on keyboard) for fast fall.
+        if (useDownForFastFall && Input.GetAxis("Vertical") < 0f) handleStateSwitch(HEAVY);
     }
 
 
