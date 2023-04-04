@@ -225,7 +225,6 @@ GameObject:
   - component: {fileID: 847799172702469046}
   - component: {fileID: 3965079579380392247}
   - component: {fileID: 8169327711117177602}
-  - component: {fileID: 3329713481517187498}
   m_Layer: 0
   m_Name: breakablePlat
   m_TagString: Untagged
@@ -363,19 +362,3 @@ MonoBehaviour:
   rightPiece: {fileID: 5854693717593948768}
   destroyAfter: 3
   velocityThreshold: 30
---- !u!114 &3329713481517187498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7076818234828879855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f3b6e50dab37046b70dad443df06ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftPiece: {fileID: 2409832068203501209}
-  rightPiece: {fileID: 5854693717593948768}
-  destroyAfter: 3
-  velocityThreshold: 35

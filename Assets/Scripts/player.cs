@@ -13,7 +13,7 @@ public class player : MonoBehaviour
 
 
     // adjustable variables.
-    public const float defaultAirSpeed = 5;
+    public float defaultAirSpeed = 5;
     public float defaultGravityScale = 1;
     public float defaultGroundSpeed = 10;
     public float jumpForce = 350;
@@ -92,13 +92,13 @@ public class player : MonoBehaviour
 
             case HEAVY:
                 if (grounded) {
-                    _abilities.handleFastFallEnd();
+                    if (isFastFalling) _abilities.handleFastFallEnd();
                     if (automaticallySwitchToPrevGroundState) {
                         handleStateSwitch(prevGroundState);
                         break;
                     }
                 } else {
-                    _abilities.handleFastFallStart();
+                    if (!isFastFalling) _abilities.handleFastFallStart();
                 }
                 break;
             

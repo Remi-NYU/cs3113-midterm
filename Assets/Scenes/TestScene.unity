@@ -2913,7 +2913,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: breakablePlat
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3329713481517187498, guid: 4b39457887d6df845b0c33584e547148, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4b39457887d6df845b0c33584e547148, type: 3}
 --- !u!1001 &4286145586524847392
 PrefabInstance:
@@ -2969,6 +2970,14 @@ PrefabInstance:
     - target: {fileID: 4286145586699234234, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286145586699234237, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
+      propertyPath: useDownForFastFall
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4286145586699234237, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
+      propertyPath: automaticallySwitchToPrevGroundState
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
