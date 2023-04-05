@@ -19,9 +19,9 @@ public class Eyes : MonoBehaviour
         Vector3 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         Vector3 camPos = cam.transform.position;
         Vector3 pos = (mousePos - camPos);
-        pos.x = 1 / (1 + Mathf.Exp(-pos.x));
-        pos.y = 1 / (1 + Mathf.Exp(-pos.y));
-        pos.z = 1 / (1 + Mathf.Exp(-pos.z));
+        pos.x = 2 * (1 / (1 + Mathf.Exp(-pos.x))) - 1;
+        pos.y = 2 * (1 / (1 + Mathf.Exp(-pos.y))) - 1;
+        pos.z = 0;
         eyes.localPosition = pos * maxDistance;
     }
 }
