@@ -75,7 +75,6 @@ public class player : MonoBehaviour
 
             case GLIDER:
                 if (grounded) {
-                    _abilities.handleGlideEnd();
                     if (automaticallySwitchToPrevGroundState) handleStateSwitch(prevGroundState);
                     break;
                 } else { // airborne...
@@ -92,7 +91,6 @@ public class player : MonoBehaviour
 
             case HEAVY:
                 if (grounded) {
-                    if (isFastFalling) _abilities.handleFastFallEnd();
                     if (automaticallySwitchToPrevGroundState) {
                         handleStateSwitch(prevGroundState);
                         break;
@@ -125,6 +123,9 @@ public class player : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.OverlapCircle(bottom.position, 0.1f, theGround);
+        if (grounded && isGliding) _abilities.handleGlideEnd();
+        if (grounded && isFastFalling) _abilities.handleFastFallEnd();
+
         if (Input.GetKeyDown(KeyCode.Alpha1)) handleStateSwitch(MARBLE);
         if (Input.GetKeyDown(KeyCode.Alpha2)) handleStateSwitch(SPRING);
         if (Input.GetKeyDown(KeyCode.Alpha3)) handleStateSwitch(GLIDER);
