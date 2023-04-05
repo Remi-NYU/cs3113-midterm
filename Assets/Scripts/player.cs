@@ -124,21 +124,11 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        grounded = Physics2D.OverlapCircle(bottom.position, 0.1f, theGround);
-<<<<<<< Updated upstream
-        if (grounded && isGliding) _abilities.handleGlideEnd();
-        if (grounded && isFastFalling) _abilities.handleFastFallEnd();
-
-        if (Input.GetKeyDown(KeyCode.Alpha1)) handleStateSwitch(MARBLE);
-        if (Input.GetKeyDown(KeyCode.Alpha2)) handleStateSwitch(SPRING);
-        if (Input.GetKeyDown(KeyCode.Alpha3)) handleStateSwitch(GLIDER);
-        if (Input.GetKeyDown(KeyCode.Alpha4)) handleStateSwitch(HEAVY);
-=======
+        grounded = Physics2D.OverlapCircle(bottom.position, 0.1f, theGround) && (_rigidbody.velocity.y == 0f);
         if (controls.Mode_Move()) handleStateSwitch(MARBLE);
         if (controls.Mode_Jump()) handleStateSwitch(SPRING);
         if (controls.Mode_Glide()) handleStateSwitch(GLIDER);
         if (controls.Mode_Fall()) handleStateSwitch(HEAVY);
->>>>>>> Stashed changes
 
         // gamepad keys. Need to be tested before turning in!!!
         //if (Input.GetKeyDown(KeyCode.LeftArrow)) handleStateSwitch(MARBLE);

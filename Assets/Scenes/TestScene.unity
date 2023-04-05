@@ -2055,6 +2055,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1815880955025875103, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
+      propertyPath: m_UseOneWay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815880955025875103, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
+      propertyPath: m_UseOneWayGrouping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5476496399725114951, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
       propertyPath: m_Name
       value: staticPlatform-OneWay (2)
@@ -2421,7 +2429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 72404472289583688, guid: f59766b1e0dbd4c4193a75f5fb81bbb8, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.2409446
+      value: 1.2208413
       objectReference: {fileID: 0}
     - target: {fileID: 72404472289583688, guid: f59766b1e0dbd4c4193a75f5fb81bbb8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2429,7 +2437,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 72404472289583688, guid: f59766b1e0dbd4c4193a75f5fb81bbb8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.0445156
+      value: 5.0344
       objectReference: {fileID: 0}
     - target: {fileID: 72404472289583688, guid: f59766b1e0dbd4c4193a75f5fb81bbb8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2973,7 +2981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480017792109913290, guid: a7eff1f8031660749bcb0eba5dc08e68, type: 3}
       propertyPath: m_LocalScale.y
-      value: 27.973343
+      value: 27.819489
       objectReference: {fileID: 0}
     - target: {fileID: 480017792109913290, guid: a7eff1f8031660749bcb0eba5dc08e68, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2981,7 +2989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480017792109913290, guid: a7eff1f8031660749bcb0eba5dc08e68, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.6914
+      value: 20.7684
       objectReference: {fileID: 0}
     - target: {fileID: 480017792109913290, guid: a7eff1f8031660749bcb0eba5dc08e68, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3232,7 +3240,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This is a cow,
+  m_text: This a cow,
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 637cd75952b6b6947a36bc1d15b02da3, type: 2}
   m_sharedMaterial: {fileID: -322825038282946119, guid: 637cd75952b6b6947a36bc1d15b02da3, type: 2}
@@ -3788,6 +3796,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1815880955025875103, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
+      propertyPath: m_UseOneWayGrouping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5476496399725114951, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
       propertyPath: m_Name
       value: staticPlatform-OneWay
@@ -4179,6 +4191,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 480017792109913290, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1815880955025875103, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
+      propertyPath: m_UseOneWayGrouping
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5476496399725114951, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
