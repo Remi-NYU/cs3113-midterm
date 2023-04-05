@@ -16,6 +16,12 @@ public class StateManager : MonoBehaviour
     [SerializeField] StateToUI[] stateToUI;
     GameState currentState;
     bool initFinished;
+    AudioSource audioSource;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -78,6 +84,7 @@ public class StateManager : MonoBehaviour
         GetUI(currentState).Hide();
         GetUI(newState).Show();
         currentState = newState;
+        audioSource.Play();
     }
 
     public void Unpause()
