@@ -26,7 +26,7 @@ public class player : MonoBehaviour
     abilities _abilities;
     Animator _animator;
 
-
+    ControlWrapper controls;
 
     // non-adjustable variables.
     int state = 0;
@@ -48,6 +48,8 @@ public class player : MonoBehaviour
 
         airspeed = defaultAirSpeed;
         groundspeed = defaultGroundSpeed;
+
+        controls = new ControlWrapper();
     }
 
 
@@ -123,6 +125,7 @@ public class player : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.OverlapCircle(bottom.position, 0.1f, theGround);
+<<<<<<< Updated upstream
         if (grounded && isGliding) _abilities.handleGlideEnd();
         if (grounded && isFastFalling) _abilities.handleFastFallEnd();
 
@@ -130,12 +133,18 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha2)) handleStateSwitch(SPRING);
         if (Input.GetKeyDown(KeyCode.Alpha3)) handleStateSwitch(GLIDER);
         if (Input.GetKeyDown(KeyCode.Alpha4)) handleStateSwitch(HEAVY);
+=======
+        if (controls.Mode_Move()) handleStateSwitch(MARBLE);
+        if (controls.Mode_Jump()) handleStateSwitch(SPRING);
+        if (controls.Mode_Glide()) handleStateSwitch(GLIDER);
+        if (controls.Mode_Fall()) handleStateSwitch(HEAVY);
+>>>>>>> Stashed changes
 
         // gamepad keys. Need to be tested before turning in!!!
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) handleStateSwitch(MARBLE);
-        if (Input.GetKeyDown(KeyCode.UpArrow)) handleStateSwitch(SPRING);
-        if (Input.GetKeyDown(KeyCode.RightArrow)) handleStateSwitch(GLIDER);
-        if (Input.GetKeyDown(KeyCode.DownArrow)) handleStateSwitch(HEAVY);
+        //if (Input.GetKeyDown(KeyCode.LeftArrow)) handleStateSwitch(MARBLE);
+        //if (Input.GetKeyDown(KeyCode.UpArrow)) handleStateSwitch(SPRING);
+        //if (Input.GetButtonDown("Mode_Glide")) handleStateSwitch(GLIDER);
+        //if (Input.GetKeyDown(KeyCode.DownArrow)) handleStateSwitch(HEAVY);
 
         // if the option is toggled, support down key (S on keyboard) for fast fall.
         if (useDownForFastFall && Input.GetAxis("Vertical") < 0f) handleStateSwitch(HEAVY);
