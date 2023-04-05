@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { Moving, Building, Paused, Victory }
+public enum GameState { Moving, Paused, Victory }
 
 [System.Serializable]
 struct StateToUI
@@ -14,7 +14,6 @@ struct StateToUI
 public class StateManager : MonoBehaviour
 {
     [SerializeField] StateToUI[] stateToUI;
-    GameState previousState;
     GameState currentState;
     bool initFinished;
 
@@ -27,22 +26,12 @@ public class StateManager : MonoBehaviour
         }
 
         // Pause
-        if ((currentState == GameState.Moving || currentState == GameState.Building) && Input.GetKeyDown(KeyCode.Escape))
+        if (currentState == GameState.Moving && Input.GetKeyDown(KeyCode.Escape))
         {
             SwitchState(GameState.Paused);
         }
         // Unpause
         else if (currentState == GameState.Paused && Input.GetKeyDown(KeyCode.Escape))
-        {
-            SwitchState(previousState);
-        }
-        // Turn buildmode on
-        else if (currentState == GameState.Moving && Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            SwitchState(GameState.Building);
-        }
-        // Turn buildmode off
-        else if (currentState == GameState.Building && Input.GetKeyDown(KeyCode.LeftShift))
         {
             SwitchState(GameState.Moving);
         }
@@ -88,12 +77,11 @@ public class StateManager : MonoBehaviour
     {
         GetUI(currentState).Hide();
         GetUI(newState).Show();
-        previousState = currentState;
         currentState = newState;
     }
 
     public void Unpause()
     {
-        SwitchState(previousState);
+        SwitchState(GameState.Moving);
     }
 }
