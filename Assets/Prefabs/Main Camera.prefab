@@ -244,6 +244,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StateManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1490948206950317028, guid: 7f35410a2ea98104fa191b6b9d8eccfe, type: 3}
+      propertyPath: currentLevelNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f35410a2ea98104fa191b6b9d8eccfe, type: 3}
 --- !u!4 &8031568611142240739 stripped

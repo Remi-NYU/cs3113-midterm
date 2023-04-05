@@ -36,4 +36,8 @@ public class Timer : MonoBehaviour
 
         return string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
     }
+
+    public float GetTimeFloat() {
+        return time;
+    }
 }

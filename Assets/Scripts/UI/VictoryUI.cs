@@ -7,6 +7,7 @@ using TMPro;
 public class VictoryUI : GenericUI
 {
     Canvas uiCanvas;
+    [SerializeField] int currentLevelNumber;
     [SerializeField] string nextLevelName;
     [SerializeField] Timer timer;
     [SerializeField] TMP_Text timerText;
@@ -23,6 +24,7 @@ public class VictoryUI : GenericUI
         timer.gameObject.SetActive(false);
         uiCanvas.enabled = true;
         timerText.text = timer.GetTimeString();
+        Records.SetRecord(currentLevelNumber, timer.GetTimeFloat());
     }
 
     public override void Hide()

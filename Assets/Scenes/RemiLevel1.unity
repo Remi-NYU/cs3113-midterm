@@ -1351,6 +1351,10 @@ PrefabInstance:
       propertyPath: inventory.Array.data[0].itemPrefab
       value: 
       objectReference: {fileID: 5476496399725114951, guid: c773fa8fde3b249268259143967ff4b7, type: 3}
+    - target: {fileID: 8031568611105118806, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
+      propertyPath: currentLevelNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8031568611659259101, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
       propertyPath: m_Name
       value: Main Camera
