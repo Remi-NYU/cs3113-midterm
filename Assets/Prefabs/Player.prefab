@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 4286145586699234237}
   - component: {fileID: 4286145586699234238}
   - component: {fileID: 3171020461508150270}
+  - component: {fileID: 5945117678857894104}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -160,6 +161,7 @@ MonoBehaviour:
   jumpForce: 350
   automaticallySwitchToPrevGroundState: 0
   useDownForFastFall: 1
+  allowSpringGlide: 0
   theGround:
     serializedVersion: 2
     m_Bits: 55
@@ -202,6 +204,26 @@ MonoBehaviour:
   glidingAirSpeed: 8
   glidingGravityScale: 0.15
   fastFallGravityScale: 10
+--- !u!95 &5945117678857894104
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4286145586699234232}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d08f07716db544249a6681faa8c2a06a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1001 &8059795927182308117
 PrefabInstance:
   m_ObjectHideFlags: 0
