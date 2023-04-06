@@ -67,8 +67,13 @@ public class player : MonoBehaviour
 
             case MARBLE:
                 if (!grounded) break;
-                if (hrInput == 0) break;
+                if (hrInput == 0)
+                {
+                    _animator.SetBool("moving", false);
+                    break;
+                } 
                 _rigidbody.velocity = new Vector2(hrInput * groundspeed, _rigidbody.velocity.y);
+                _animator.SetBool("moving", true);
                 break;
 
 
@@ -123,7 +128,8 @@ public class player : MonoBehaviour
         if (state == GLIDER) _abilities.handleGlideEnd();
         if (state == HEAVY) _abilities.handleFastFallEnd();
         _animator.SetInteger("State", newState);
-        Instantiate(transform_particles, transform.position, Quaternion.identity);
+        Vector3 partpos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
+        Instantiate(transform_particles, partpos, Quaternion.identity);
         state = newState;
     }
 
