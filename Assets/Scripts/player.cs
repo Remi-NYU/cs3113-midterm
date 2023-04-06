@@ -19,6 +19,7 @@ public class player : MonoBehaviour
     public float jumpForce = 350;
     public bool automaticallySwitchToPrevGroundState = true;
     public bool useDownForFastFall = true;
+    public bool allowSpringGlide = false;
 
     public LayerMask theGround;
     public Transform bottom;
@@ -73,7 +74,7 @@ public class player : MonoBehaviour
 
             case SPRING:
                 if (grounded && (vertInput > 0)) _rigidbody.AddForce(new Vector2(0, jumpForce));
-                if (!grounded && hrInput != 0) {
+                if (!grounded && hrInput != 0 && allowSpringGlide) {
                     _rigidbody.velocity = new Vector2(hrInput * airspeed, _rigidbody.velocity.y);
                 }
                 break;
@@ -130,6 +131,10 @@ public class player : MonoBehaviour
     void Update()
     {
         grounded = Physics2D.OverlapCircle(bottom.position, 0.1f, theGround) && (_rigidbody.velocity.y == 0f);
+        if (grounded) {
+            if (isFastFalling) _abilities.handleFastFallEnd();
+            if (isGliding) _abilities.handleGlideEnd();
+        }
         if (controls.Mode_Move()) handleStateSwitch(MARBLE);
         if (controls.Mode_Jump()) handleStateSwitch(SPRING);
         if (controls.Mode_Glide()) handleStateSwitch(GLIDER);

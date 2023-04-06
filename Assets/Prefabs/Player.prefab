@@ -159,7 +159,7 @@ MonoBehaviour:
   defaultGravityScale: 1
   defaultGroundSpeed: 10
   jumpForce: 350
-  automaticallySwitchToPrevGroundState: 1
+  automaticallySwitchToPrevGroundState: 0
   useDownForFastFall: 1
   theGround:
     serializedVersion: 2
