@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 609a86fa3542e1843837c0dec45800e8
+guid: c10e2b17a8be76244b1429de419b2e31
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,64 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player_Spring_Red_0
+      name: player_wheel_actual_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 469d86cd185272943836eb8648ebcc96
-      internalID: 113709038
+      spriteID: 1f3719e23483a724fa28d7b98400b3da
+      internalID: 1836553341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_Spring_Red_1
+      name: player_wheel_actual_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 256
         y: 0
-        width: 32
-        height: 32
+        width: 256
+        height: 256
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6f22e28c0aa85464dbbbc02c15c04b00
-      internalID: -1861104786
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_Spring_Red_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 393fb850036225342ad573478389cfc8
-      internalID: 959490397
+      spriteID: 0bba213431437d14eaa05498341105ff
+      internalID: 240760406
       vertices: []
       indices: 
       edges: []
@@ -190,9 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Player_Spring_Red_2: 959490397
-      Player_Spring_Red_0: 113709038
-      Player_Spring_Red_1: -1861104786
+      player_wheel_actual_1: 240760406
+      player_wheel_actual_0: 1836553341
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
