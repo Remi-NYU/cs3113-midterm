@@ -29,7 +29,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4286145586699234234}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4286145586699234232
 GameObject:
@@ -65,8 +65,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4286145586210982655}
   - {fileID: 7230594064452401013}
+  - {fileID: 4286145586210982655}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -111,8 +111,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.96750474, a: 1}
+  m_Sprite: {fileID: 2078108560, guid: 070a4d20dccbb0946988ad9621668598, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -165,6 +165,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   bottom: {fileID: 4286145586210982655}
+  transform_particles: {fileID: 1452354672569364377, guid: c15107bd6a5750d479f9ad91b3994efc, type: 3}
   isGliding: 0
   isFastFalling: 0
   groundspeed: 8
@@ -231,7 +232,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 829259707556086880, guid: c1b68c8c2ddf6f644a0e12274bd30ec0, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 829259707556086880, guid: c1b68c8c2ddf6f644a0e12274bd30ec0, type: 3}
       propertyPath: m_LocalScale.x

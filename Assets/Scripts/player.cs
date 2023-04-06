@@ -22,9 +22,13 @@ public class player : MonoBehaviour
 
     public LayerMask theGround;
     public Transform bottom;
+
+    public GameObject transform_particles;
     Rigidbody2D _rigidbody;
     abilities _abilities;
     Animator _animator;
+
+
 
     ControlWrapper controls;
 
@@ -118,6 +122,7 @@ public class player : MonoBehaviour
         if (state == GLIDER) _abilities.handleGlideEnd();
         if (state == HEAVY) _abilities.handleFastFallEnd();
         _animator.SetInteger("State", newState);
+        Instantiate(transform_particles, transform.position, Quaternion.identity);
         state = newState;
     }
 
