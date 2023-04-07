@@ -36,6 +36,11 @@ public class player : MonoBehaviour
 
 
 
+    public GameObject WheelBrokenPrefab;
+    public GameObject GliderBrokenPrefab;
+    public GameObject RockBrokenPrefab;
+
+
     ControlWrapper controls;
 
     // non-adjustable variables.
@@ -167,17 +172,33 @@ public class player : MonoBehaviour
         }
     }
 
+
+    private bool deathAlreadyHandled = false;
     private void handleDeath()
     {
+
+        if (deathAlreadyHandled) return;
+
         // lock player in place.
         _rigidbody.bodyType = RigidbodyType2D.Static;
 
         // play death animation.
         _animator.SetBool("dead", true);
 
+        if (state == GLIDER) {
+            Instantiate(GliderBrokenPrefab, transform.position, Quaternion.identity);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        } else if (state == HEAVY) {
+            Instantiate(RockBrokenPrefab, transform.position, Quaternion.identity);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        } else if (state == MARBLE) {
+            Instantiate(WheelBrokenPrefab, transform.position, Quaternion.identity);
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
+
         // handle scene change.
         StartCoroutine(WaitForSceneReload());
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        deathAlreadyHandled = true;
     }
 
     IEnumerator WaitForSceneReload()

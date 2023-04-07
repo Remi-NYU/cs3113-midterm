@@ -162,12 +162,16 @@ MonoBehaviour:
   automaticallySwitchToPrevGroundState: 0
   useDownForFastFall: 0
   allowSpringGlide: 0
+  deathYVal: -1000
   theGround:
     serializedVersion: 2
     m_Bits: 55
   bottom: {fileID: 4286145586210982655}
   image: {fileID: 0}
   transform_particles: {fileID: 1452354672569364377, guid: c15107bd6a5750d479f9ad91b3994efc, type: 3}
+  WheelBrokenPrefab: {fileID: 7977900827606857334, guid: 0784d70a14948df4ebf5095c0fca5361, type: 3}
+  GliderBrokenPrefab: {fileID: 9069029278977069360, guid: 1455920317357e144b1603c77a6fe8df, type: 3}
+  RockBrokenPrefab: {fileID: 6452408881267839329, guid: 1e81cd8bdca30664c99b6f9e8b63c252, type: 3}
   isGliding: 0
   isFastFalling: 0
   groundspeed: 8
