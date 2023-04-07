@@ -1869,6 +1869,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuCanvas: {fileID: 296619472}
   levelsCanvas: {fileID: 1982584969}
+  levelButton1: {fileID: 105193404}
+  levelButton2: {fileID: 893455373}
+  levelButton3: {fileID: 56220893}
+  levelButton4: {fileID: 1512362602}
 --- !u!82 &1025158523
 AudioSource:
   m_ObjectHideFlags: 0

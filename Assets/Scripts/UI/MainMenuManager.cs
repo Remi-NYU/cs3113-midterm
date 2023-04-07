@@ -7,6 +7,11 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject mainMenuCanvas;
     [SerializeField] GameObject levelsCanvas;
     AudioSource audioSource;
+    bool isMenuOpen = false;
+    public LevelButton levelButton1;
+    public LevelButton levelButton2;
+    public LevelButton levelButton3;
+    public LevelButton levelButton4;
 
     void Start() {
         audioSource = GetComponent<AudioSource>();
@@ -17,6 +22,7 @@ public class MainMenuManager : MonoBehaviour
         mainMenuCanvas.SetActive(true);
         levelsCanvas.SetActive(false);
         audioSource.Play();
+        isMenuOpen = true;
     }
 
     public void OpenLevels()
@@ -24,6 +30,7 @@ public class MainMenuManager : MonoBehaviour
         mainMenuCanvas.SetActive(false);
         levelsCanvas.SetActive(true);
         audioSource.Play();
+        isMenuOpen = false;
     }
 
     public void QuitGame()
@@ -36,9 +43,28 @@ public class MainMenuManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7))
         {
             OpenMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button1) && isMenuOpen) {
+            QuitGame();
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0) && isMenuOpen) {
+            OpenLevels();
+        }
+
+        if (!isMenuOpen && Input.GetKeyDown(KeyCode.Joystick1Button0)) {
+            levelButton1.LoadLevel();
+        }
+        if (!isMenuOpen && Input.GetKeyDown(KeyCode.Joystick1Button1)) {
+            levelButton2.LoadLevel();
+        }
+        if (!isMenuOpen && Input.GetKeyDown(KeyCode.Joystick1Button2)) {
+            levelButton3.LoadLevel();
+        }
+        if (!isMenuOpen && Input.GetKeyDown(KeyCode.Joystick1Button3)) {
+            levelButton4.LoadLevel();
         }
     }
 }
