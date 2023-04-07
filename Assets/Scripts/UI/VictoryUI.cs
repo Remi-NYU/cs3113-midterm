@@ -19,6 +19,8 @@ public class VictoryUI : GenericUI
     }
 
     void Update() {
+        if (uiCanvas.enabled == false) return;
+
         if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
             LoadNextLevel();
         }
