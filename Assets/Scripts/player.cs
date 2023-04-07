@@ -61,7 +61,7 @@ public class player : MonoBehaviour
 
     void FixedUpdate() {
         float hrInput = Input.GetAxis("Horizontal");
-        float vertInput = Input.GetAxis("Vertical");
+        bool vertInput = controls.JumpButton();
 
         switch(state) {
 
@@ -78,7 +78,15 @@ public class player : MonoBehaviour
 
 
             case SPRING:
-                if (grounded && (vertInput > 0)) _rigidbody.AddForce(new Vector2(0, jumpForce));
+                if (grounded) 
+                {
+                    _animator.SetBool("grounded", true);
+                    if(vertInput)
+                    {
+                        _rigidbody.AddForce(new Vector2(0, jumpForce));
+                        _animator.SetBool("grounded", false);
+                    }
+                }
                 if (!grounded && hrInput != 0 && allowSpringGlide) {
                     _rigidbody.velocity = new Vector2(hrInput * airspeed, _rigidbody.velocity.y);
                 }
@@ -88,6 +96,7 @@ public class player : MonoBehaviour
             case GLIDER:
                 if (grounded) {
                     if (automaticallySwitchToPrevGroundState) handleStateSwitch(prevGroundState);
+                    _animator.SetBool("grounded", true);
                     break;
                 } else { // airborne...
                     if (_rigidbody.velocity.y <= 0f) {
@@ -136,7 +145,7 @@ public class player : MonoBehaviour
 
     void Update()
     {
-        grounded = Physics2D.OverlapCircle(bottom.position, 0.1f, theGround) && (_rigidbody.velocity.y == 0f);
+        grounded = Physics2D.OverlapCircle(bottom.position, 0.2f, theGround) && (_rigidbody.velocity.y == 0f);
         if (grounded) {
             if (isFastFalling) _abilities.handleFastFallEnd();
             if (isGliding) _abilities.handleGlideEnd();

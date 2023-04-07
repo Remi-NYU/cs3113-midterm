@@ -68,4 +68,18 @@ public class ControlWrapper : MonoBehaviour
         }
         return inputter;
     }
+
+    public bool JumpButton()
+    {
+        bool inputter = false;
+        if(Input.GetKey("space"))
+        {
+            inputter = true;
+        }
+        if(Input.GetKey("joystick button 0"))
+        {
+            inputter = true;
+        }
+        return inputter;
+    }
 }
