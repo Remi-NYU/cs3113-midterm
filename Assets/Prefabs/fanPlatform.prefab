@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3186365849887190737}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0024, y: 9.11, z: 0.04530889}
-  m_LocalScale: {x: 0.99152654, y: 17.266062, z: 1}
+  m_LocalPosition: {x: 0.0002, y: 9.11, z: 0.04530889}
+  m_LocalScale: {x: 2.1497786, y: 17.266062, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3067342189588204628}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parent: {fileID: 6933382535648861913}
   blowForceMagnitude: 0.5
+  blowDirection: up
 --- !u!1 &6933382535648861913
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 6933382535648861913}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -12.86, y: -4.46, z: -0.04530889}
-  m_LocalScale: {x: 4.273994, y: 0.50750583, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3186365849887190738}
@@ -202,12 +203,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.30459976, b: 1, a: 1}
+  m_Sprite: {fileID: -514337554, guid: 6efb6605987faf04b9248e8f1e2e3d1d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.56, y: 2.56}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -226,18 +227,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.006695509}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.56, y: 2.56}
+    newSize: {x: 2.56, y: 2.56}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.5800915, y: 0.66523504}
   m_EdgeRadius: 0
 --- !u!251 &3822272679778158593
 PlatformEffector2D:
