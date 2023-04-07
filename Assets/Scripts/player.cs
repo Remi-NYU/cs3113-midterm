@@ -28,7 +28,8 @@ public class player : MonoBehaviour
     public Transform bottom;
 
     public GameObject image;
-
+    
+    public GameObject mainCamera;
     public GameObject transform_particles;
     Rigidbody2D _rigidbody;
     abilities _abilities;
@@ -54,6 +55,7 @@ public class player : MonoBehaviour
 
     AudioSource _audiosource;
 
+    public GameObject eyes;
 
     void Start()
     { 
@@ -185,7 +187,9 @@ public class player : MonoBehaviour
 
         // play death animation.
         _animator.SetBool("dead", true);
-
+        mainCamera.GetComponent<AudioSource>().Stop();
+        eyes.GetComponent<AudioSource>().Play();
+        
         if (state == GLIDER) {
             Instantiate(GliderBrokenPrefab, transform.position, Quaternion.identity);
             gameObject.GetComponent<SpriteRenderer>().enabled = false;

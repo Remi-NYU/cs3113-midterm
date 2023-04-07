@@ -8101,6 +8101,10 @@ PrefabInstance:
       value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 4286145586699234237, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1023575131}
+    - target: {fileID: 4286145586699234237, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
       propertyPath: useDownForFastFall
       value: 0
       objectReference: {fileID: 0}

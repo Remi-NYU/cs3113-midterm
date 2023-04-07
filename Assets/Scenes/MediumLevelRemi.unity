@@ -1834,6 +1834,10 @@ PrefabInstance:
       propertyPath: deathYVal
       value: -70
       objectReference: {fileID: 0}
+    - target: {fileID: 4286145586699234237, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1763387038}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
 --- !u!4 &1553812760 stripped
