@@ -52,7 +52,7 @@ public class player : MonoBehaviour
     private float airspeed;
     bool grounded = false;
 
-
+    AudioSource _audiosource;
 
 
     void Start()
@@ -61,7 +61,7 @@ public class player : MonoBehaviour
         _animator = GetComponent<Animator>();
         _abilities = GetComponent<abilities>();
         
-
+        _audiosource = GetComponent<AudioSource>();
         airspeed = defaultAirSpeed;
         groundspeed = defaultGroundSpeed;
 
@@ -152,6 +152,7 @@ public class player : MonoBehaviour
         _animator.SetInteger("State", newState);
         Vector3 partpos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
         Instantiate(transform_particles, partpos, Quaternion.identity);
+        _audiosource.Play();
         state = newState;
         switch(state) 
         {
