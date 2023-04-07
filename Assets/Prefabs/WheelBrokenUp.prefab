@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7977900826878948953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.7446, y: 1.728, z: 0.0671}
+  m_LocalPosition: {x: 0, y: 1.728, z: 0.0671}
   m_LocalScale: {x: 0.6157566, y: 0.6157566, z: 0.6157566}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -150,7 +150,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7977900827128927193}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.0505, y: 1.973, z: 0.0671}
+  m_LocalPosition: {x: 0, y: 1.973, z: 0.0671}
   m_LocalScale: {x: 0.5816106, y: 0.5816106, z: 0.5816106}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -273,7 +273,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7977900827273697362}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.113, y: 1.609, z: 0.0671}
+  m_LocalPosition: {x: 0, y: 1.609, z: 0.0671}
   m_LocalScale: {x: 0.4359, y: 0.4359, z: 0.4359}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -433,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7977900827615291892}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.753, y: 2.3653, z: 0.0671}
+  m_LocalPosition: {x: 0, y: 2.3653, z: 0.0671}
   m_LocalScale: {x: 0.5326505, y: 0.5326505, z: 0.5326505}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -556,7 +556,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7977900828353907781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.322, y: 2.443, z: 0.0671}
+  m_LocalPosition: {x: 0, y: 2.443, z: 0.0671}
   m_LocalScale: {x: 0.4836423, y: 0.4836423, z: 0.4836423}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -679,7 +679,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7977900828765905183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.415, y: 1.744, z: 0.0671}
+  m_LocalPosition: {x: 0, y: 1.744, z: 0.0671}
   m_LocalScale: {x: 0.6352831, y: 0.6352831, z: 0.6352831}
   m_ConstrainProportionsScale: 0
   m_Children: []
