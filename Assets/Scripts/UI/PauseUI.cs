@@ -17,7 +17,7 @@ public class PauseUI : GenericUI
         void Update() {
         if (uiCanvas.enabled == false) return;
 
-        if (Input.GetKeyDown(KeyCode.Joystick1Button2)) {
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2) || Input.GetKeyDown(KeyCode.R)) {
             RestartLevel();
         }
         if (Input.GetKeyDown(KeyCode.Joystick1Button3)) {
