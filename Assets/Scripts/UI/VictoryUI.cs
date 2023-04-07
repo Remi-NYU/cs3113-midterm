@@ -18,6 +18,21 @@ public class VictoryUI : GenericUI
         initDone = true;
     }
 
+    void Update() {
+        if (Input.GetKeyDown(KeyCode.Joystick1Button0)) {
+            LoadNextLevel();
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button2)) {
+            RestartLevel();
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button3)) {
+            LoadMainMenu();
+        }
+        if (Input.GetKeyDown(KeyCode.Joystick1Button7)) {
+            QuitGame();
+        }
+    }
+
     public override void Show()
     {
         Time.timeScale = 0;
