@@ -45,7 +45,7 @@ public class ControlWrapper : MonoBehaviour
             inputter = true;
             Debug.Log("Keyboard 3!");
         }
-        if(Input.GetAxis("Left Trigger") > 0)
+        if(Input.GetKey("joystick button 6"))
         {
             inputter = true;
             Debug.Log("GamePad Left Trigger!");
@@ -61,7 +61,7 @@ public class ControlWrapper : MonoBehaviour
             inputter = true;
             Debug.Log("Keyboard 4!");
         }
-        if(Input.GetAxis("Right Trigger") > 0)
+        if(Input.GetKey("joystick button 7"))
         {
             inputter = true;
             Debug.Log("GamePad Right Trigger!");
