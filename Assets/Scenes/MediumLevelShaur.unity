@@ -419,7 +419,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 200128175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.20000076, y: -1.57, z: -10}
+  m_LocalPosition: {x: -0.19850077, y: -1.5545001, z: -11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1718,6 +1718,10 @@ PrefabInstance:
       propertyPath: inventory.Array.data[2].itemPrefab
       value: 
       objectReference: {fileID: 6933382535648861913, guid: e40b6eaf60ab7cf4dbed09daa7a4f88a, type: 3}
+    - target: {fileID: 8031568611105118806, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
+      propertyPath: currentLevelNumber
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8031568611659259101, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
       propertyPath: m_Name
       value: Main Camera (1)
@@ -1728,15 +1732,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8031568611659259102, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.20000076
+      value: -0.19850077
       objectReference: {fileID: 0}
     - target: {fileID: 8031568611659259102, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.57
+      value: -1.5545001
       objectReference: {fileID: 0}
     - target: {fileID: 8031568611659259102, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10
+      value: -11
       objectReference: {fileID: 0}
     - target: {fileID: 8031568611659259102, guid: 77f98d5483380ea48bf50a7b7c8cf2b1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1913,7 +1917,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
 --- !u!4 &1506253230 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4286145586699234234, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7230594065226788328, guid: dec2d04cb856bb54184831c3eb61f389, type: 3}
   m_PrefabInstance: {fileID: 1506253229}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1567809772

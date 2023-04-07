@@ -1484,7 +1484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: RogerLevel1
+  levelName: MediumLevelShaur
   levelNumber: 2
 --- !u!1 &900822721
 GameObject:
@@ -2375,7 +2375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: StateManager Test
+  levelName: HardLevel
   levelNumber: 4
 --- !u!1 &1641454171
 GameObject:
