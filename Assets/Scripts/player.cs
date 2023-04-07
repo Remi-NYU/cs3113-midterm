@@ -21,6 +21,7 @@ public class player : MonoBehaviour
     public bool automaticallySwitchToPrevGroundState = true;
     public bool useDownForFastFall = true;
     public bool allowSpringGlide = false;
+    public float deathYVal = -1000;
 
     public LayerMask theGround;
     public Transform bottom;
@@ -165,9 +166,23 @@ public class player : MonoBehaviour
         }
     }
 
+    private void handleDeath()
+    {
+        // lock player in place.
+        _rigidbody.bodyType = RigidbodyType2D.Static;
+
+        // play death animation.
+        _animator.SetBool("dead", true);
+
+        // handle scene change TODO.
+    }
+
 
     void Update()
     {
+        if (gameObject.transform.position.y <= deathYVal) handleDeath();
+
+
         grounded = Physics2D.OverlapCircle(bottom.position, 0.2f, theGround) && (_rigidbody.velocity.y == 0f);
         if (grounded) {
             if (isFastFalling) _abilities.handleFastFallEnd();
@@ -177,12 +192,6 @@ public class player : MonoBehaviour
         if (controls.Mode_Jump()) handleStateSwitch(SPRING);
         if (controls.Mode_Glide()) handleStateSwitch(GLIDER);
         if (controls.Mode_Fall()) handleStateSwitch(HEAVY);
-
-        // gamepad keys. Need to be tested before turning in!!!
-        //if (Input.GetKeyDown(KeyCode.LeftArrow)) handleStateSwitch(MARBLE);
-        //if (Input.GetKeyDown(KeyCode.UpArrow)) handleStateSwitch(SPRING);
-        //if (Input.GetButtonDown("Mode_Glide")) handleStateSwitch(GLIDER);
-        //if (Input.GetKeyDown(KeyCode.DownArrow)) handleStateSwitch(HEAVY);
 
         // if the option is toggled, support down key (S on keyboard) for fast fall.
         if (useDownForFastFall && Input.GetAxis("Vertical") < 0f) handleStateSwitch(HEAVY);
