@@ -24,7 +24,7 @@ EditorBuildSettings:
     path: Assets/Scenes/TestLevels/RogerLevel1-Legacy.unity
     guid: d41efb0752d3e43fcb3df11a18e740fd
   - enabled: 1
-    path: Assets/Scenes/ShaurLevel1.unity
+    path: Assets/Scenes/MediumLevelShaur.unity
     guid: f17fb57a8b9ae0b49a155dce8bafb91c
   - enabled: 1
     path: Assets/Scenes/EasyLevel.unity
