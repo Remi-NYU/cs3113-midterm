@@ -12,12 +12,24 @@ public class AbilityIndicatorHUD : MonoBehaviour
     [SerializeField] Sprite jumpSprite;
     [SerializeField] Sprite fallSprite;
     [SerializeField] Sprite glideSprite;
+    ControlWrapper controlWrapper = new ControlWrapper();
 
     void Start()
     {
         image = transform.GetChild(0).GetComponent<Image>();
         text = transform.GetChild(1).GetComponent<TMP_Text>();
         SetRoll();
+    }
+
+    void Update() {
+        if (controlWrapper.Mode_Move())
+            SetRoll();
+        if (controlWrapper.Mode_Jump())
+            SetJump();
+        if (controlWrapper.Mode_Fall())
+            SetFall();
+        if (controlWrapper.Mode_Glide())
+            SetGlide();
     }
 
     public void SetRoll() {

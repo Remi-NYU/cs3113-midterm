@@ -2619,7 +2619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1490948207885181200
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3005,7 +3005,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1490948208092455479
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4314,10 +4314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: babdb3728390b6f4ba5cde7486ee386e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rollSprite: {fileID: 21300000, guid: 9611385f3378a744ca37b2c24b103ccb, type: 3}
-  jumpSprite: {fileID: 21300000, guid: 6e2b0f5b1241f1849bc4b063d5199d1d, type: 3}
-  fallSprite: {fileID: 21300000, guid: 1d9711d94764c374198b36ddc5471a67, type: 3}
-  glideSprite: {fileID: 21300000, guid: ba9ade3866e0f9345afd71d12c02daf8, type: 3}
+  rollSprite: {fileID: 1474308601, guid: 6042210a4f8f35045b5d978872983be7, type: 3}
+  jumpSprite: {fileID: 1217384520, guid: 24b1c980c83cdf745977cc242edac315, type: 3}
+  fallSprite: {fileID: 272201172, guid: c4d2d6c912e464947a6f7ced14ed5a85, type: 3}
+  glideSprite: {fileID: 1661763890, guid: 154322882978e0640b9ea0e642adb2ac, type: 3}
 --- !u!1 &8561956399287053444
 GameObject:
   m_ObjectHideFlags: 0
