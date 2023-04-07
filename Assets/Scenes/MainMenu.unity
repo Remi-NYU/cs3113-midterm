@@ -271,7 +271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: ShaurLevel1
+  levelName: MediumLevelRemi
   levelNumber: 3
 --- !u!1 &105193399
 GameObject:
@@ -421,7 +421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f948b4569432c1e4dab03a5c9adeaa3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: RemiLevel1
+  levelName: EasyLevel
   levelNumber: 1
 --- !u!1 &159308918
 GameObject:
