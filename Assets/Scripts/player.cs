@@ -54,7 +54,7 @@ public class player : MonoBehaviour
         airspeed = defaultAirSpeed;
         groundspeed = defaultGroundSpeed;
 
-        controls = new ControlWrapper();
+        //controls = new ControlWrapper();
     }
 
 
