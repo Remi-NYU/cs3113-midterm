@@ -160,12 +160,13 @@ MonoBehaviour:
   defaultGroundSpeed: 10
   jumpForce: 350
   automaticallySwitchToPrevGroundState: 0
-  useDownForFastFall: 1
+  useDownForFastFall: 0
   allowSpringGlide: 0
   theGround:
     serializedVersion: 2
     m_Bits: 55
   bottom: {fileID: 4286145586210982655}
+  image: {fileID: 0}
   transform_particles: {fileID: 1452354672569364377, guid: c15107bd6a5750d479f9ad91b3994efc, type: 3}
   isGliding: 0
   isFastFalling: 0

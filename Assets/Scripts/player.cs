@@ -104,6 +104,7 @@ public class player : MonoBehaviour
                     _animator.SetBool("grounded", true);
                     break;
                 } else { // airborne...
+                    _animator.SetBool("grounded", false);
                     if (_rigidbody.velocity.y <= 0f) {
                         // all conditions are met! start gliding phase.
                         _abilities.handleGlideStart();
@@ -148,13 +149,16 @@ public class player : MonoBehaviour
         switch(state) 
         {
             case MARBLE:
-                image.GetComponent<Image>().color = new Color(0, 1.0f, 0, 0.5f);
+                image.GetComponent<Image>().color = new Color(0, 1.0f, 0, 1.0f);
                 break;
             case SPRING:
-                image.GetComponent<Image>().color = new Color(1.0f, 0, 0, 0.5f);
+                image.GetComponent<Image>().color = new Color(0.8f, 0, 0, 1.0f);
                 break;
             case GLIDER:
-                image.GetComponent<Image>().color = new Color(1.0f, 0.647f, 0, 0.5f);
+                image.GetComponent<Image>().color = new Color(0, 0, 1.0f, 1.0f);
+                break;
+            case HEAVY:
+                image.GetComponent<Image>().color = new Color(0.9f, 0.45f, 0, 1.0f);
                 break;
             default:
                 break;

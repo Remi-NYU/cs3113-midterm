@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 75526c567027c734cb677d4ae648a280
+guid: c4d2d6c912e464947a6f7ced14ed5a85
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,7 +117,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_glider_finalized_0
+      name: player_rock_finalized_0
       rect:
         serializedVersion: 2
         x: 0
@@ -131,14 +131,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 751eab208eac1284b95b284ad05f7a9b
-      internalID: -1704264703
+      spriteID: 0acb5d52ea4abfb439f4aecf53363d82
+      internalID: 272201172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_glider_finalized_1
+      name: player_rock_finalized_1
       rect:
         serializedVersion: 2
         x: 256
@@ -152,14 +152,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3d138240b823e340936c5146cc73d0c
-      internalID: -1962223609
+      spriteID: 16ba6bfe23bd5354390297cfa2a2ca63
+      internalID: 192259306
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: player_glider_finalized_2
+      name: player_rock_finalized_2
       rect:
         serializedVersion: 2
         x: 512
@@ -173,29 +173,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9ed44612b3b57e4eb5e1ac9f690fd6e
-      internalID: 606542505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: player_glider_finalized_3
-      rect:
-        serializedVersion: 2
-        x: 768
-        y: 0
-        width: 256
-        height: 256
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 26bd01bc005c4204f98722c68e32b28c
-      internalID: 1921506337
+      spriteID: 5968b7abcb2b8414f97bafe58427ca05
+      internalID: 1367681430
       vertices: []
       indices: 
       edges: []
@@ -211,10 +190,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      player_glider_finalized_1: -1962223609
-      player_glider_finalized_2: 606542505
-      player_glider_finalized_3: 1921506337
-      player_glider_finalized_0: -1704264703
+      player_rock_finalized_1: 192259306
+      player_rock_finalized_0: 272201172
+      player_rock_finalized_2: 1367681430
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
