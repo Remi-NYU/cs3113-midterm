@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MediumLevelRemi.unity
     guid: 32776f6aaff627c4d822066e4ce6c9a3
+  - enabled: 1
+    path: Assets/Scenes/HardLevel.unity
+    guid: b18e38801a29041a183c4276bccedc49
   m_configObjects: {}

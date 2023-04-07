@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class player : MonoBehaviour
 {
@@ -174,7 +175,18 @@ public class player : MonoBehaviour
         // play death animation.
         _animator.SetBool("dead", true);
 
-        // handle scene change TODO.
+        // handle scene change.
+        StartCoroutine(WaitForSceneReload());
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    IEnumerator WaitForSceneReload()
+    {
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
 
