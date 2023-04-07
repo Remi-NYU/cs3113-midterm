@@ -44,7 +44,7 @@ public class ControlWrapper
         {
             inputter = true;
         }
-        if(Input.GetAxis("Left Trigger") > 0)
+        if(Input.GetKey("joystick button 6"))
         {
             inputter = true;
         }
@@ -58,7 +58,7 @@ public class ControlWrapper
         {
             inputter = true;
         }
-        if(Input.GetAxis("Right Trigger") > 0)
+        if(Input.GetKey("joystick button 7"))
         {
             inputter = true;
         }
