@@ -32,7 +32,7 @@ public class StateManager : MonoBehaviour
         }
 
         // Pause
-        if (currentState == GameState.Moving && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button7)))
+        if (currentState == GameState.Moving && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Joystick1Button9)))
         {
             SwitchState(GameState.Paused);
         }
