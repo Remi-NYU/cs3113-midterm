@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class player : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class player : MonoBehaviour
 
     public LayerMask theGround;
     public Transform bottom;
+
+    public GameObject image;
 
     public GameObject transform_particles;
     Rigidbody2D _rigidbody;
@@ -50,11 +53,13 @@ public class player : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _abilities = GetComponent<abilities>();
+        
 
         airspeed = defaultAirSpeed;
         groundspeed = defaultGroundSpeed;
 
         controls = new ControlWrapper();
+        image.GetComponent<Image>().color = new Color(0, 1.0f, 0, 0.5f);
     }
 
 
@@ -140,6 +145,20 @@ public class player : MonoBehaviour
         Vector3 partpos = new Vector3(transform.position.x, transform.position.y, transform.position.z + 1);
         Instantiate(transform_particles, partpos, Quaternion.identity);
         state = newState;
+        switch(state) 
+        {
+            case MARBLE:
+                image.GetComponent<Image>().color = new Color(0, 1.0f, 0, 0.5f);
+                break;
+            case SPRING:
+                image.GetComponent<Image>().color = new Color(1.0f, 0, 0, 0.5f);
+                break;
+            case GLIDER:
+                image.GetComponent<Image>().color = new Color(1.0f, 0.647f, 0, 0.5f);
+                break;
+            default:
+                break;
+        }
     }
 
 
