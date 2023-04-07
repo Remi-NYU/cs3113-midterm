@@ -7,7 +7,7 @@ public class MainMenuManager : MonoBehaviour
     [SerializeField] GameObject mainMenuCanvas;
     [SerializeField] GameObject levelsCanvas;
     AudioSource audioSource;
-    bool isMenuOpen = false;
+    bool isMenuOpen = true;
     public LevelButton levelButton1;
     public LevelButton levelButton2;
     public LevelButton levelButton3;
